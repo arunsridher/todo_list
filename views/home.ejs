@@ -9,8 +9,126 @@
 
     <body>
         <h1 id="main-heading">
-            <i class="fas fa-address-book"></i>
+            <i class="fas fa-clipboard-list"></i>
             <%= title %>
         </h1>
+        <div id = "app-container">
+            <div id="form">
+                <form action="/create-card" method="POST">
+                    <div id="one">
+                        <label for="description">Description</label>
+                        <br/>
+                        <input type="text" id="description" name="description" placeholder="Enter name" required>
+                    </div>
+                    <div id="two">
+                        <label for="category">Category</label>
+                        <br/>
+                        <select id="category" name="category" required>
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="school">School</option>
+                            <option value="cleaning">Cleaning</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div id="three">
+                        <label for="due-date">Due Date</label>
+                        <br/>
+                        <input type="date" id="due-date" name="due-date" placeholder="dd/mm/yyyy" required>
+                    </div>
+                    <div id="buttons">
+                        <div id="add-task">
+                            <button type="submit"><i class="fas fa-plus"></i> &nbsp; ADD TASK</button>
+                        </div>
+                        <div id="delete-tasks">
+                            <button type="button"><i class="fas fa-trash"></i> &nbsp; DELETE TASKS</button>
+                        </div>
+                    </div>
+                </form>
+            </div>   
+            <div id="cards">
+                <% for(let i of todos){ %>
+                    <div class="card">
+                        <div class="card-selector">
+                            <i class="far fa-square unselected"></i>
+                            <i class="fas fa-check-square selected"></i>
+                        </div>
+                        <div class="card-details">
+                            <span class="card-title"><%= i.title %></span>
+                            <span class="due-date"><%= i.date %></span>
+                        </div>
+                        <div class="card-category">
+                            <span class="cc-label"><%= i.category %></span>
+                        </div>
+                    </div>
+                <% } %>
+                <!-- <div class="card">
+                    <div class="card-selector">
+                        <i class="far fa-square unselected"></i>
+                        <i class="fas fa-check-square selected"></i>
+                    </div>
+                    <div class="card-details">
+                        <span class="card-title">Hello Rockstar!!</span>
+                        <span class="due-date">MAY 2, 2019</span>
+                    </div>
+                    <div class="card-category">
+                        <span class="cc-label">Work</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-selector">
+                        <i class="far fa-square unselected"></i>
+                        <i class="fas fa-check-square selected"></i>
+                    </div>
+                    <div class="card-details">
+                        <span class="card-title">Hello Rockstar!!</span>
+                        <span class="due-date">MAY 2, 2019</span>
+                    </div>
+                    <div class="card-category">
+                        <span class="cc-label">Work</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-selector">
+                        <i class="far fa-square unselected"></i>
+                        <i class="fas fa-check-square selected"></i>
+                    </div>
+                    <div class="card-details">
+                        <span class="card-title">Hello Rockstar!!</span>
+                        <span class="due-date">MAY 2, 2019</span>
+                    </div>
+                    <div class="card-category">
+                        <span class="cc-label">Work</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-selector">
+                        <i class="far fa-square unselected"></i>
+                        <i class="fas fa-check-square selected"></i>
+                    </div>
+                    <div class="card-details">
+                        <span class="card-title">Hello Rockstar!!</span>
+                        <span class="due-date">MAY 2, 2019</span>
+                    </div>
+                    <div class="card-category">
+                        <span class="cc-label">Work</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-selector">
+                        <i class="far fa-square unselected"></i>
+                        <i class="fas fa-check-square selected"></i>
+                    </div>
+                    <div class="card-details">
+                        <span class="card-title">Hello Rockstar!!</span>
+                        <span class="due-date">MAY 2, 2019</span>
+                    </div>
+                    <div class="card-category">
+                        <span class="cc-label">Work</span>
+                    </div>
+                </div> -->
+            </div> 
+        </div>
+        <script src="/js/script.js"></script>
     </body>
 </html>
