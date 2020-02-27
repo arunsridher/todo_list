@@ -33,3 +33,22 @@ document.getElementById('three').addEventListener('click', function(){
     document.getElementById('three').style.backgroundColor=clickedColor;
     document.getElementById('due-date').style.backgroundColor=clickedColor;
 });
+
+$('.card-selector').click(function( event ) {
+    var parent = $(this).parent();
+    $(this).children().toggleClass("hide");
+    $(parent[0].children[1]).toggleClass("strike");
+    parent.toggleClass("delete");
+});
+
+function deleteContacts(){
+    console.log("deleting selected contacts")
+    $("li").each(function() {
+        // console.log($( this )[0].children[0].classList.length);
+        let card = $(this)[0].children[0];
+        // console.log(card);
+        if(card.classList.length == 2){
+            console.log("id : ", card.id);
+        }
+    });
+}

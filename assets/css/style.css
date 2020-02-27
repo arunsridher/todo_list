@@ -95,6 +95,14 @@ option{
     display: none;
 }
 
+#cards-list{
+    padding-left: 0;
+}
+
+li{
+    list-style: none;
+}
+
 .card{
     height: 65px;
     margin-bottom: 5px;
@@ -114,11 +122,7 @@ option{
     color: #444444;
 }
 
-.unselected{
-    display: inline;
-}
-
-.selected{
+.hide{
     display: none;
 }
 

@@ -41,27 +41,31 @@
                             <button type="submit"><i class="fas fa-plus"></i> &nbsp; ADD TASK</button>
                         </div>
                         <div id="delete-tasks">
-                            <button type="button"><i class="fas fa-trash"></i> &nbsp; DELETE TASKS</button>
+                            <button type="button" onclick="deleteContacts()"><i class="fas fa-trash"></i> &nbsp; DELETE TASKS</button>
                         </div>
                     </div>
                 </form>
             </div>   
             <div id="cards">
-                <% for(let i of todos){ %>
-                    <div class="card">
-                        <div class="card-selector">
-                            <i class="far fa-square unselected"></i>
-                            <i class="fas fa-check-square selected"></i>
-                        </div>
-                        <div class="card-details">
-                            <span class="card-title"><%= i.title %></span>
-                            <span class="due-date"><%= i.date %></span>
-                        </div>
-                        <div class="card-category">
-                            <span class="cc-label"><%= i.category %></span>
-                        </div>
-                    </div>
-                <% } %>
+                <ul id="cards-list">
+                    <% for(let i of todos){ %>
+                        <li>
+                            <div class="card" id="<%=i.id %>">
+                                <div class="card-selector">
+                                    <i class="far fa-square"></i>
+                                    <i class="fas fa-check-square hide"></i>
+                                </div>
+                                <div class="card-details">
+                                    <span class="card-title"><%= i.title %></span>
+                                    <span class="due-date"><%= i.date %></span>
+                                </div>
+                                <div class="card-category">
+                                    <span class="cc-label"><%= i.category %></span>
+                                </div>
+                            </div>
+                        </li>
+                    <% } %>
+                </ul>
                 <!-- <div class="card">
                     <div class="card-selector">
                         <i class="far fa-square unselected"></i>
@@ -129,6 +133,9 @@
                 </div> -->
             </div> 
         </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" 
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
         <script src="/js/script.js"></script>
     </body>
 </html>

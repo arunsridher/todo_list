@@ -18,17 +18,20 @@ var todoList = [
     {
         title: "Why not add a task?",
         date: "may 2, 2019",
-        category: "Other"
+        category: "Other",
+        id: 1
     },
     {
         title: "Let's make a todo app",
         date: "APR 28, 2019",
-        category: "Scool"
+        category: "Scool",
+        id: 2
     },
     {
         title: "Annual report submission deadline",
         date: "Jun 1, 2019",
-        category: "work"
+        category: "work",
+        id: 3
     }
 ];
 app.listen(port, function(err){
