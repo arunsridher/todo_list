@@ -45,6 +45,34 @@ app.post("/create-card", function(req, res){
     res.redirect('back');
 });
 
+app.post("/delete", function(req, res){
+    let ids = req.body.ids;
+    ids.forEach(element => {
+        let cardIndex = todoList.findIndex(card => card.id == element);
+        console.log("cardIndex " + cardIndex);
+        if(cardIndex != -1){
+            todoList.splice(cardIndex, 1);
+        }
+    });
+
+    res.redirect('back');
+    // todoList.findByIdAndDelete(id, function(err){
+    //     if(err){
+    //         console.log("Couldn't delete contact");
+    //         return;    
+    //     }
+
+    //     return res.redirect('back');
+    // });
+    // let contactIndex = contactList.findIndex(contact => contact.phone == phone);
+    
+    // if(contactIndex != -1){
+    //     contactList.splice(contactIndex, 1);
+    // }
+
+    // return res.redirect("back");
+});
+
 app.listen(port, function(err){
     if(err){
         console.log(`Error in running the server: ${err}`);

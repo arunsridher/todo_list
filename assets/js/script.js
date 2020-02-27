@@ -43,12 +43,20 @@ $('.card-selector').click(function( event ) {
 
 function deleteContacts(){
     console.log("deleting selected contacts")
+    var ids = [];
     $("li").each(function() {
         // console.log($( this )[0].children[0].classList.length);
         let card = $(this)[0].children[0];
         // console.log(card);
         if(card.classList.length == 2){
             console.log("id : ", card.id);
+            ids.push(card.id);
         }
+    });
+    console.log(ids);
+
+    $.post("/delete", { 'ids': ids } ).done(function(data){
+        console.log(data);
+        location.reload();
     });
 }
