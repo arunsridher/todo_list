@@ -14,6 +14,7 @@ app.get('/', function(req, res){
     });
 });
 
+var id = 3;
 var todoList = [
     {
         title: "Why not add a task?",
@@ -34,6 +35,16 @@ var todoList = [
         id: 3
     }
 ];
+
+app.post("/create-card", function(req, res){
+    todoList.push({
+        title: req.body.description,
+        date: req.body["due-date"],
+        category: req.body.category
+    });
+    res.redirect('back');
+});
+
 app.listen(port, function(err){
     if(err){
         console.log(`Error in running the server: ${err}`);
