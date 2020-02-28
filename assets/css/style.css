@@ -160,11 +160,31 @@ li{
     height: 40px;
     border-radius: 2px;
     line-height: 40px;
-    color: #f0f0f0;
+    font-size: 0.85rem;
+    color: #fff;
     text-align: center;
     background-color: #be3144;
 }
 
+.work{
+    background-color: #007bff;
+}
+
+.school{
+    background-color: #17a2b8;
+}
+
+.personal{
+    background-color: #28a745;
+}
+
+.cleaning{
+    background-color: #343a40;
+}
+
+.other{
+    background-color: #dc3545;
+}
 .strike{
     text-decoration: line-through;
 }

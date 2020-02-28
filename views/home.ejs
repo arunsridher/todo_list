@@ -34,7 +34,7 @@
                     <div id="three">
                         <label for="due-date">Due Date</label>
                         <br/>
-                        <input type="date" id="due-date" name="due-date" placeholder="dd/mm/yyyy" required>
+                        <input type="date" id="due-date" name="due-date" placeholder="dd/mm/yyyy" min="2020-02-28"required>
                     </div>
                     <div id="buttons">
                         <div id="add-task">
@@ -57,80 +57,16 @@
                                 </div>
                                 <div class="card-details">
                                     <span class="card-title"><%= i.title %></span>
-                                    <span class="due-date"><%= i.date %></span>
+                                    <span class="due-date"><i class="fas fa-calendar-alt"></i>
+                                         <%= i.date %></span>
                                 </div>
                                 <div class="card-category">
-                                    <span class="cc-label"><%= i.category %></span>
+                                    <span class="cc-label <%= i.category %>"><%= i.category.toUpperCase() %></span>
                                 </div>
                             </div>
                         </li>
                     <% } %>
                 </ul>
-                <!-- <div class="card">
-                    <div class="card-selector">
-                        <i class="far fa-square unselected"></i>
-                        <i class="fas fa-check-square selected"></i>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-title">Hello Rockstar!!</span>
-                        <span class="due-date">MAY 2, 2019</span>
-                    </div>
-                    <div class="card-category">
-                        <span class="cc-label">Work</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-selector">
-                        <i class="far fa-square unselected"></i>
-                        <i class="fas fa-check-square selected"></i>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-title">Hello Rockstar!!</span>
-                        <span class="due-date">MAY 2, 2019</span>
-                    </div>
-                    <div class="card-category">
-                        <span class="cc-label">Work</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-selector">
-                        <i class="far fa-square unselected"></i>
-                        <i class="fas fa-check-square selected"></i>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-title">Hello Rockstar!!</span>
-                        <span class="due-date">MAY 2, 2019</span>
-                    </div>
-                    <div class="card-category">
-                        <span class="cc-label">Work</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-selector">
-                        <i class="far fa-square unselected"></i>
-                        <i class="fas fa-check-square selected"></i>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-title">Hello Rockstar!!</span>
-                        <span class="due-date">MAY 2, 2019</span>
-                    </div>
-                    <div class="card-category">
-                        <span class="cc-label">Work</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-selector">
-                        <i class="far fa-square unselected"></i>
-                        <i class="fas fa-check-square selected"></i>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-title">Hello Rockstar!!</span>
-                        <span class="due-date">MAY 2, 2019</span>
-                    </div>
-                    <div class="card-category">
-                        <span class="cc-label">Work</span>
-                    </div>
-                </div> -->
             </div> 
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.js" 
