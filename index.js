@@ -1,10 +1,13 @@
+// Basic express setup
 const express = require('express');
 const port = 8000;
 const app = express();
 
+// Db and schema setup
 const db = require('./config/mongoose');
 const Card = require('./models/card');
 
+// Middleware
 app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.urlencoded());
@@ -25,10 +28,12 @@ app.get('/', function(req, res){
 });
 
 app.post("/create-card", function(req, res){
+    //convert date to required format
     let date = new Date(req.body["due-date"]);
     date = date.toDateString();
     let arr = date.split(" ");
     date = arr[1] + " " + arr[2] + ", " + arr[3];
+    
     Card.create({
         title: req.body.description,
         date: date,

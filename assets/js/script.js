@@ -1,10 +1,7 @@
-$(document).ready(function(){
-    $('#due-date').attr('min', todayDate());
-});
-
 var defaultColor = '#fff';
 var clickedColor = '#f0f0f0';
 
+// change input field background color on click
 document.getElementById('one').addEventListener('click', function(){
     document.getElementById('two').style.backgroundColor=defaultColor;
     document.getElementById('category').style.backgroundColor=defaultColor;
@@ -38,6 +35,7 @@ document.getElementById('three').addEventListener('click', function(){
     document.getElementById('due-date').style.backgroundColor=clickedColor;
 });
 
+// update checkbox and strike off text on selecting a card
 $('.card-selector').click(function( event ) {
     var parent = $(this).parent();
     $(this).children().toggleClass("hide");
@@ -45,6 +43,7 @@ $('.card-selector').click(function( event ) {
     parent.toggleClass("delete");
 });
 
+//function to fetch all the selected contacts and call the server along with the ids of selected cards to be deleted
 function deleteContacts(){
     console.log("deleting selected contacts")
     var ids = [];
@@ -64,6 +63,11 @@ function deleteContacts(){
         location.reload();
     });
 }
+
+// restrict date picker to not allow user to pick a previous date
+$(document).ready(function(){
+    $('#due-date').attr('min', todayDate());
+});
 
 function todayDate() {
     var today = new Date(); // get the current date
